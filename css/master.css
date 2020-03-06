@@ -1,0 +1,89 @@
+@import "reset.css";
+@font-face {
+  font-family: "Circe";
+  src: url("../fonts/Circe-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Nolde";
+  src: url("../fonts/Nolde.woff") format("woff");
+}
+
+:root {
+  --main-color: #FFE0AF;
+  --accent-color: #D23535;
+}
+
+body {
+  font-family: "Circe";
+  color: var(--main-color);
+  background-repeat: no-repeat;
+  background-color: black;
+  background-size: contain;
+}
+
+.wrapper {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100vh;
+  /* background-image: url(../img/back.png); */
+  background size: cover;
+  background-repeat: no-repeat;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.wrapper img:first-child {
+  position: absolute;
+  top: 0;
+  left: 1.9vw;
+  width: 90vw;
+  opacity: 50%;
+}
+
+.wrapper img:nth-child(2) {
+  position: absolute;
+  top: -0.3vw;
+  left: 1.4vw;
+  width: 88.8vw;
+}
+
+.type img:first-child {
+  display: none;
+}
+
+.type .info h1:first-child {
+  font-family: "Nolde";
+}
+
+.map img:first-child {
+  position: absolute;
+  top: 12.8vw;
+  left: 71vw;
+  width: 9.5vw;
+}
+
+.map img:nth-child(2) {
+  position: absolute;
+  top: 0vw;
+  left: 36vw;
+  width: 57vw;
+}
+
+.map img:nth-child(3) {
+  position: absolute;
+  top: 4vw;
+  left: 36vw;
+  width: 48vw;
+  z-index: -1;
+}
