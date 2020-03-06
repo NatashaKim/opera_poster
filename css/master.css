@@ -27,7 +27,7 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
   height: 100vh;
-  background-image: url(../img/back.png);
+  /* background-image: url(../img/back.png); */
   background size: cover;
   background-repeat: no-repeat;
 }
@@ -70,12 +70,32 @@ a {
   left: 24.6vw;
 }
 
+.info {
+  display: none;
+}
+
+.try h2 {
+  position: absolute;
+  font-size: 1.13vw;
+  top: 43.3vw;
+  left: 14.1vw;
+  transform: rotate(-90deg);
+}
+
 .try_2 h1 {
   font-family: "Nolde";
   position: absolute;
   font-size: 7vw;
   top: 26vw;
   left: 6.6vw;
+}
+
+.try_2 h2 {
+  position: absolute;
+  font-size: 1.88vw;
+  top: 12.7vw;
+  left: 22vw;
+  transform: rotate(-90deg);
 }
 
 .try h1,
