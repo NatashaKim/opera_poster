@@ -27,7 +27,7 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
   height: 100vh;
-  /* background-image: url(../img/back.png); */
+  background-image: url(../img/back.png);
   background size: cover;
   background-repeat: no-repeat;
 }
@@ -112,9 +112,9 @@ a {
 
 .map img:nth-child(2) {
   position: absolute;
-  top: 0vw;
-  left: 36vw;
-  width: 57vw;
+  top: -3.9vw;
+  left: 35.8vw;
+  width: 60.5vw;
 }
 
 .map img:nth-child(3) {
