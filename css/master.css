@@ -24,9 +24,10 @@ body {
 
 .wrapper {
   position: relative;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  /* overflow-x: hidden;
+  overflow-y: hidden; */
   height: 100vh;
+  /* background-image: url(../img/back.png); */
   background size: cover;
   background-repeat: no-repeat;
 }
@@ -52,9 +53,9 @@ a {
 
 .wrapper img:nth-child(2) {
   position: absolute;
-  top: -0.3vw;
-  left: 1.4vw;
-  width: 88.8vw;
+  top: -5.1vw;
+  left: -1.5vw;
+  width: 91.8vw;
 }
 
 .type img:first-child {
@@ -118,8 +119,20 @@ a {
 
 .map img:nth-child(3) {
   position: absolute;
-  top: 4vw;
+  top: 15vw;
   left: 36vw;
-  width: 48vw;
+  width: 39vw;
   z-index: -1;
+}
+
+.path_timeline {
+  font-size: 4.1vw;
+  fill: var(--main-color);
+}
+
+svg {
+  width: 72vw;
+  position: absolute;
+  top: -4.7vw;
+  left: 26.6vw;
 }
