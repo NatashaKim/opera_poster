@@ -13,18 +13,38 @@ var subInfo = document.getElementById("sub_info");
 var mainName = document.getElementById("main_name");
 var mainInfo = document.getElementById("main_info");
 
+
+
+let path = anime.path('#curve')
+let svgMotion = anime({
+  targets: '.map .slider',
+  translateX: path('x'),
+  translateY: path('y'),
+  rotate: path('angle'),
+  easing: 'linear',
+  duration: 15000,
+  autoplay: false
+})
+
+var tween = TweenMax.to(".background-container", 1, {scale:0.1, ease:Linear.easeNone});
+
 // build scene
-var scene = new ScrollMagic.Scene({duration: 14000})
-        .on("progress", function (e) {
+var scene = new ScrollMagic.Scene({
+  duration: 14000
+});
+
+        scene.on("progress", function (e) {
+
+        svgMotion.seek(svgMotion.duration * e.progress);
 
         if(e.progress < 0.14286){
           subName.innerText = "0.000000";
           subInfo.innerText = "СИНГУЛЯРНОСТЬ";
-          mainName.innerText = "10 секунд";
+          mainName.innerHTML = "10 <span class = \"test\">-9</span> секунд";
           mainInfo.innerText = "ЧАСТИЦЫ И СИЛЫ";
         }
         else if(e.progress < 0.28571){
-          subName.innerText = "10 секунд";
+          subName.innerHTML = "10 <span class = \"test\">-9</span> секунд";
           subInfo.innerText = "ЧАСТИЦЫ И СИЛЫ";
           mainName.innerText = "1 секунда";
           mainInfo.innerText = "АТОМНЫЕ ЯДРА";
@@ -60,17 +80,6 @@ var scene = new ScrollMagic.Scene({duration: 14000})
           mainInfo.innerText = "ХОЛОДНЫЙ КОСМОС";
         }
 
-        })
-        .addTo(controller);
-
-
-
-
-// let mainScene = document.querySelector('#wrapper')
-// let box1Animation = anime({
-//   targets: box1,
-//   translateX: 500,
-//   rotate: [0, 360],
-//   duration: 1500,
-//   autoplay: false
-// })
+      });
+        scene.setTween(tween);
+        scene.addTo(controller);
