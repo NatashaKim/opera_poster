@@ -18,16 +18,16 @@ body {
   font-family: "Circe";
   color: var(--main-color);
   background-repeat: no-repeat;
-  /* background-color: black; */
+  background-color: black;
   background-size: contain;
 }
 
 .wrapper {
   position: relative;
-  /* overflow-x: hidden;
-  overflow-y: hidden; */
+  /* overflow-x: hidden; */
+  overflow-y: hidden;
   height: 100vh;
-  background-image: url(../img/ipad_mini.png);
+  /* background-image: url(../img/ipad_mini.png); */
   background size: cover;
   background-repeat: no-repeat;
 }
@@ -45,9 +45,9 @@ a {
 
 .wrapper img:first-child {
   position: absolute;
-  top: 0;
-  left: 1.9vw;
-  width: 90vw;
+  top: -10.7vw;
+  left: -11.8vw;
+  width: 125vw;
   opacity: 50%;
 }
 
@@ -57,6 +57,8 @@ a {
   left: -1.5vw;
   width: 91.8vw;
 }
+
+/* Левая часть */
 
 .type img:first-child {
   display: none;
@@ -105,22 +107,40 @@ a {
   text-align: left;
 }
 
-.test {
-  font-size: 1.5vw;
+.index1 {
+  font-size: 2.8vw;
   vertical-align: text-top;
 }
 
-.try h1,
-.try_2 h1 {
-  font-family: "Nolde";
+.index2 {
+  font-size: 1.1vw;
+  vertical-align: text-top;
 }
 
+/* @media (min-width: 768px) {
+  .wrapper img:first-child {
+    top: -4.2vw;
+    left: -62.8vw;
+    width: 193vw;
+    opacity: 50%;
+    transform: rotate(90deg);
+  }
+
+  .wrapper img:nth-child(2) {
+    position: absolute;
+    top: 12.9vw;
+    left: -20.1vw;
+    width: 139.8vw;
+    transform: rotate(90deg);
+  }
+} */
+
+
+/* Правая часть */
+
 .map img:first-child {
-  /* position: absolute;
-  top: 12.8vw;
-  left: 71vw; */
-  top: -4.7vw;
-  left: 26.6vw;
+  top: -14.7vw;
+  left: 22.5vw;
   width: 9.5vw;
 }
 
@@ -149,4 +169,10 @@ svg {
   position: absolute;
   top: -4.7vw;
   left: 26.6vw;
+}
+
+.slider_controller {
+  top: -8vw;
+  left: 26.1vw;
+  width: 76vw
 }

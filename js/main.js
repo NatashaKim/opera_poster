@@ -40,11 +40,11 @@ var scene = new ScrollMagic.Scene({
         if(e.progress < 0.14286){
           subName.innerText = "0.000000";
           subInfo.innerText = "СИНГУЛЯРНОСТЬ";
-          mainName.innerHTML = "10 <span class = \"test\">-9</span> секунд";
+          mainName.innerHTML = "10 <span class = \"index1\">-9</span> секунд";
           mainInfo.innerText = "ЧАСТИЦЫ И СИЛЫ";
         }
         else if(e.progress < 0.28571){
-          subName.innerHTML = "10 <span class = \"test\">-9</span> секунд";
+          subName.innerHTML = "10 <span class = \"index2\">-9</span> секунд";
           subInfo.innerText = "ЧАСТИЦЫ И СИЛЫ";
           mainName.innerText = "1 секунда";
           mainInfo.innerText = "АТОМНЫЕ ЯДРА";
