@@ -1,3 +1,18 @@
+function tweenPosition(angle, rayLength, zoom){
+   var c = Math.cos(angle);
+   var s = Math.sin(angle);
+   return       { scale: zoom, x: rayLength * c * zoom, y:rayLength * s * zoom };
+ }
+
+function galaxyTween(galaxyName, angleDeg, zoom){
+  return TweenMax.fromTo(galaxyName, 1,
+    tweenPosition(angleDeg / 180 * 3.1415,400*zoom,0.1),
+    tweenPosition(angleDeg / 180 * 3.1415,400*zoom,1)
+  );
+}
+
+
+
 // Зафиксировать окно
 let controller = new ScrollMagic.Controller()
 
@@ -26,7 +41,16 @@ let svgMotion = anime({
   autoplay: false
 })
 
-var tween = TweenMax.to(".background-container", 1, {scale:0.1, ease:Linear.easeNone});
+
+var tween1 = galaxyTween(".objects1",135,2);
+var tween2 = galaxyTween(".objects2",45,1);
+var tween3 = galaxyTween(".objects3",-90,0.7);
+
+var scene1 = new ScrollMagic.Scene({  duration: 14000}).setTween(tween1).addTo(controller);
+var scene2 = new ScrollMagic.Scene({  duration: 14000}).setTween(tween2).addTo(controller);
+var scene3 = new ScrollMagic.Scene({  duration: 14000}).setTween(tween3).addTo(controller);
+
+var tween = TweenMax.fromTo(".objects", 1,  { scale: 0.1 }, { scale: 0.1, ease:Quad.easeOut});
 
 // build scene
 var scene = new ScrollMagic.Scene({
@@ -40,11 +64,11 @@ var scene = new ScrollMagic.Scene({
         if(e.progress < 0.14286){
           subName.innerText = "0.000000";
           subInfo.innerText = "СИНГУЛЯРНОСТЬ";
-          mainName.innerHTML = "10 <span class = \"index1\">-9</span> секунд";
+          mainName.innerHTML = "10 <span class = \"index1\">-9</span>  секунд";
           mainInfo.innerText = "ЧАСТИЦЫ И СИЛЫ";
         }
         else if(e.progress < 0.28571){
-          subName.innerHTML = "10 <span class = \"index2\">-9</span> секунд";
+          subName.innerHTML = "10 <span class = \"index2\">-9</span>  секунд";
           subInfo.innerText = "ЧАСТИЦЫ И СИЛЫ";
           mainName.innerText = "1 секунда";
           mainInfo.innerText = "АТОМНЫЕ ЯДРА";
